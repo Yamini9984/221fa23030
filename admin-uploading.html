@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post New Event - University Event Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #3b5998;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        main {
+            max-width: 100%; /* Full width */
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #3b5998;
+            margin-bottom: 1.5rem;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 1.5rem; /* Space between fields */
+        }
+        .form-group {
+            flex: 1 1 calc(50% - 1rem); /* Two per row, accounting for gap */
+            min-width: 250px; /* Ensure minimum width for smaller screens */
+            margin-bottom: 1.5rem; /* Add bottom margin for vertical spacing */
+        }
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="datetime-local"],
+        input[type="number"],
+        textarea {
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%; /* Full width of the form group */
+            box-sizing: border-box; /* Ensures padding does not affect total width */
+        }
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+        button {
+            padding: 0.8rem;
+            background: #3b5998;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 100%; /* Full width */
+        }
+        button:hover {
+            background: #2e478b;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GatherX</h1>
+    </header>
+    <main>
+        <h2>Post New Event</h2>
+        <form id="event-form">
+            <div class="form-group">
+                <label for="event-image">Event Image:</label>
+                <input type="file" id="event-image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event-title">Title of the Event:</label>
+                <input type="text" id="event-title" placeholder="Enter the event title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event-description">Description:</label>
+                <textarea id="event-description" placeholder="Enter a brief description of the event" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="event-date-time">Date and Time:</label>
+                <input type="datetime-local" id="event-date-time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="entry-fee">Entry Fee:</label>
+                <input type="number" id="entry-fee" placeholder="Enter entry fee" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event-location">Location:</label>
+                <input type="text" id="event-location" placeholder="Enter event location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="items-to-carry">What to Carry:</label>
+                <textarea id="items-to-carry" placeholder="Enter items to carry to the event" required></textarea>
+            </div>
+
+            <div class="form-group" style="flex-basis: 100%; margin-top: 1rem;">
+                <button type="submit">Submit Event</button>
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 University Event Management. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('event-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Show confirmation alert
+            const confirmSubmission = confirm('Are you sure you want to submit the event?');
+            if (confirmSubmission) {
+                alert('Event submitted successfully!'); // You can replace this with actual form submission logic
+                // You can add your form handling logic here (e.g., send data to server)
+            } else {
+                alert('You can edit the form and submit again.'); // Message for user
+            }
+        });
+    </script>
+</body>
+</html>

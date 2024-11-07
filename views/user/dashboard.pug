@@ -1,0 +1,239 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title User Dashboard - GatherX
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+
+    //- link(rel='stylesheet', href='./assets/css/index.css')
+    style.
+      /* Base styles */
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          display: flex;
+          min-height: 100vh;
+          flex-direction: column;
+      }
+
+      /* Sidebar */
+      .sidebar {
+          width: 70px;
+          background-color: #2c3e50;
+          color: white;
+          transition: width 0.3s;
+          height: 100vh;
+          position: fixed;
+          overflow: hidden;
+      }
+
+      .sidebar:hover {
+          width: 200px;
+      }
+
+      .sidebar h1, .sidebar span {
+          display: none;
+      }
+
+      .sidebar:hover h1, .sidebar:hover span {
+          display: inline;
+      }
+
+      .sidebar ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      .sidebar ul li {
+          padding: 15px;
+          text-align: center;
+      }
+
+      .sidebar ul li a {
+          text-decoration: none;
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: center;
+      }
+
+      .sidebar ul li i {
+          font-size: 24px;
+      }
+
+      .sidebar ul li:hover {
+          background-color: #34495e;
+      }
+
+      /* Main content */
+      .main-content {
+          margin-left: 70px;
+          padding: 20px;
+          flex: 1;
+          transition: margin-left 0.3s;
+      }
+
+      .sidebar:hover + .main-content {
+          margin-left: 200px;
+      }
+
+      h2 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .profile-header {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .profile-header h2 {
+          margin: 0;
+      }
+
+      .profile-header p {
+          color: #666;
+      }
+
+      /* Table Styles */
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 0 auto;
+          background-color: white;
+      }
+
+      th, td {
+          padding: 15px;
+          text-align: center;
+          border: 1px solid #ddd;
+      }
+
+      th {
+          background-color: #2c3e50;
+          color: white;
+      }
+
+      tr:nth-child(even) {
+          background-color: #f2f2f2;
+      }
+
+      /* Footer */
+      footer {
+          background-color: #2c3e50;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          width: 100%;
+          position: fixed;
+          bottom: 0;
+      }
+
+      .footer-links a {
+          color: white;
+          margin: 0 10px;
+          text-decoration: none;
+      }
+
+      .social-icons a {
+        text-decoration: none;
+          margin: 5px 5px;
+          color: white;
+      }
+
+  body
+    // Sidebar
+    .sidebar
+      h1 GatherX
+      ul
+        li
+          a(href='/home')
+            i.fas.fa-home
+            span Home
+        li
+          a(href='profile.html')
+            i.fas.fa-user
+            span Profile
+        li
+          a(href='#')
+            i.fas.fa-calendar-alt
+            span My Events
+        li
+          a(href='/')
+            i.fas.fa-cog
+            span Logout
+
+    // Main Content
+    .main-content
+      .profile-header
+        h2 Welcome, John Doe
+        p Here are the events you've recently registered for:
+
+      table
+        thead
+          tr
+            th Event Name
+            th Date
+            th Location
+            th Status
+        tbody#eventTable
+          // Event rows will be populated using JavaScript
+
+    // Footer
+    footer
+      .footer-links
+        a(href='privacy.html') Privacy Policy
+        | |
+        a(href='terms.html') Terms of Service
+        | |
+        a(href='contact.html') Contact Us
+      .social-icons
+        a(href='#') 
+         i.fab.fa-facebook-f
+        a(href='#') 
+         i.fab.fa-twitter
+        a(href='#') 
+         i.fab.fa-instagram
+        a(href='#') 
+         i.fab.fa-linkedin-in
+      p &copy; 2024 College Event Management System. All Rights Reserved.
+
+    script.
+      // Sample user registration data (this could be fetched dynamically in a real scenario)
+      const registrations = [
+          {
+              eventName: 'Music Concert',
+              date: '2024-09-22',
+              location: 'Citizens House of Blues, Boston, MA',
+              status: 'Confirmed'
+          },
+          {
+              eventName: 'Art Exhibition',
+              date: '2024-10-05',
+              location: 'City Art Gallery, Boston, MA',
+              status: 'Pending'
+          },
+          {
+              eventName: 'Tech Conference',
+              date: '2024-11-12',
+              location: 'Tech Park, Boston, MA',
+              status: 'Confirmed'
+          }
+      ];
+
+      // Populate the table with the user's registrations
+      const eventTable = document.getElementById('eventTable');
+      registrations.forEach(reg => {
+          const row = `
+              <tr>
+                  <td>${reg.eventName}</td>
+                  <td>${reg.date}</td>
+                  <td>${reg.location}</td>
+                  <td>${reg.status}</td>
+              </tr>
+          `;
+          eventTable.innerHTML += row;
+      });

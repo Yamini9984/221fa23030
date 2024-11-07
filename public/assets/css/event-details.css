@@ -1,0 +1,218 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensures footer stays at the bottom */
+}
+
+header, footer {
+    width: 100%; /* Full-width */
+    background-color: #08C2FF;
+    color: white;
+}
+
+/* Header styles */
+header {
+    position: fixed; /* Fixes header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #08C2FF;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
+    z-index: 1000; /* Ensures header is on top */
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    flex: 1; /* Allows main content to expand and push the footer down */
+    padding: 80px 20px 20px; /* Add padding-top to create space for header */
+    background-color: #f4f4f4;
+    max-width: 800px; /* Optional: Set a max width for main content */
+    margin: 0 auto; /* Center the main content */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Event details styles */
+main h2 {
+    font-size: 28px;
+    color: #2a75e6; /* Heading color */
+    margin-bottom: 20px;
+    text-align: center; /* Center align event title */
+}
+
+main p {
+    font-size: 16px;
+    color: #555; /* Description text color */
+    margin-bottom: 15px;
+}
+/* Event Details Section */
+.event-details {
+    background-color: #2a2f4e;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.event-details:hover {
+    background-color: #3a3f5e;
+}
+
+.event-details h2 {
+    color: #ff5a5f;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.event-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.event-detail-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.event-detail-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.event-detail-item i {
+    font-size: 1.5em;
+    color: #ff5a5f;
+    margin-right: 15px;
+}
+
+.event-detail-content h3 {
+    color: #ff5a5f;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.event-detail-content p {
+    color: #ddd;
+    font-size: 0.9em;
+}
+.auth-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a75e6;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    text-align: center; /* Center align button text */
+}
+
+.auth-button:hover {
+    background-color: #1d5bbf;
+}
+.book-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color:  #1d5bbf;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.2s;
+}
+
+.book-button:hover {
+    background-color: #1d5bbf;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #08C2FF; /* Match footer color with header */
+    color: white;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+p {
+    margin: 10px 0; /* Add margin for paragraphs */
+}

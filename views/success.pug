@@ -1,0 +1,45 @@
+//- extends layout
+
+//- block styles
+//-   link(rel="stylesheet", href="/assets/css/success.css")
+
+//- block content
+//-   .success-container
+//-     h1 Registration Successful!
+//-     p Thank you for registering. You can now log in to your account.
+//-     p You will be redirected to the login page in 5 seconds...
+
+//-   //- JavaScript for redirecting after 5 seconds
+//-   script.
+//-     setTimeout(function() {
+//-       window.location.href = '/login'; // Update this path to your actual login page
+//-     }, 5000);
+
+
+extends layout
+
+block styles
+  link(rel="stylesheet", href="/assets/css/success.css")
+
+block content
+  .success-container
+    h1 Registration Successful!
+    p Thank you for registering. You can now log in to your account.
+    p#countdown You will be redirected to the login page in 5 seconds...
+
+  //- JavaScript for countdown timer and redirection
+  script.
+    let countdown = 5;
+    const countdownElement = document.getElementById('countdown');
+
+    // Update the countdown every second
+    const timer = setInterval(() => {
+      countdown -= 1;
+      countdownElement.textContent = `You will be redirected to the login page in ${countdown} seconds...`;
+
+      // When countdown reaches 0, redirect to login page
+      if (countdown <= 0) {
+        clearInterval(timer);
+        window.location.href = '/login';
+      }
+    }, 1000);

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GatherX</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="reg.html">Register</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Welcome to GatherX</h1>
+            <img src="./assets/img/hero.png" alt="Hero Image" class="hero-image">
+        </section>
+
+        <!-- Authentication Section -->
+        <section class="auth-section">
+            <div class="auth-card">
+                <h2>Sign In</h2>
+                <p>Already have an account? Sign in to access your events and manage your bookings.</p>
+                <a href="./login.html" class="auth-button">Sign In</a>
+            </div>
+            
+            <div class="auth-card">
+                <h2>Sign Up</h2>
+                <p>New to GatherX? Sign up and start exploring events around you.</p>
+                <a href="./reg.html" class="auth-button">Sign Up</a>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <h2 class="events-title">Upcoming Events</h2>
+            <div class="event-cards">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <img src="./assets/img/music.png" alt="Event 1" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Music Concert</h3>
+                        <p class="event-description">Join us for an unforgettable night of live music, featuring top artists and bands.</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Music Concert')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Music Concert', 'September 22, 2024 | 11am-5pm', 
+                           'Free with College ID', 'Citizens House of Blues Boston, 15 Lansdowne St, Boston, MA 02215')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <img src="./assets/img/art.png" alt="Event 2" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Art Exhibition</h3>
+                        <p class="event-description">Explore stunning artworks from talented artists across the globe.</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Art Exhibition')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Art Exhibition', 'October 5, 2024 | 10am-4pm', 
+                           'Free with College ID', 'City Art Gallery, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <img src="./assets/img/tech.png" alt="Event 3" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Tech Conference</h3>
+                        <p class="event-description">Discover the latest in technology and innovation at our annual tech conference.</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Tech Conference')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Tech Conference', 'November 12, 2024 | 9am-6pm', 
+                           'Free with College ID', 'Tech Park, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <img src="./assets/img/film.png" alt="Event 4" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Film Screenings</h3>
+                        <p class="event-description">Experience an inspiring evening of independent films followed by discussions with filmmakers.</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Film Screenings')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Film Screenings', 'December 18, 2024 | 6pm-10pm', 
+                           'Free with College ID', 'Indie Cinema House, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card">
+                    <img src="./assets/img/esport.png" alt="Event 5" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">E-Sports Tournaments</h3>
+                        <p class="event-description">Join us for thrilling e-sports tournaments where gamers compete for glory and prizes!</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('E-Sports Tournaments')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('E-Sports Tournaments', 'January 20, 2025 | 10am-8pm', 
+                           'Free Entry', 'Esports Arena, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 -->
+                <div class="event-card">
+                    <img src="./assets/img/mock.png" alt="Event 6" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Mock Interviews</h3>
+                        <p class="event-description">Enhance your job prospects with practice interviews and feedback from industry professionals.</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Mock Interviews')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Mock Interviews', 'February 3, 2025 | 9am-3pm', 
+                           'Registration Required', 'Career Center, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 7 -->
+                <div class="event-card">
+                    <img src="./assets/img/end.png" alt="Event 7" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">End-of-Semester Parties</h3>
+                        <p class="event-description">Celebrate the end of the semester with a night of music, dancing, and fun!</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('End-of-Semester Parties')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('End-of-Semester Parties', 'April 30, 2025 | 7pm-11pm', 
+                           'Free Entry', 'Student Union Hall, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event Card 8 -->
+                <div class="event-card">
+                    <img src="./assets/img/out.png" alt="Event 8" class="event-image">
+                    <div class="event-content">
+                        <h3 class="event-title">Outdoor Adventure Trips</h3>
+                        <p class="event-description">Join us for exciting outdoor adventures filled with thrilling activities and breathtaking scenery!</p>
+                        <a href="book-ticket.html" class="event-button" 
+                           onclick="setEventTitle('Outdoor Adventure Trips')">Book Now</a>
+                        <a href="event-details.html" class="book-button"
+                           onclick="setEventDetails('Outdoor Adventure Trips', 'May 15, 2025 | 7am-5pm', 
+                           'Limited Slots Available', 'Adventure Park, Boston, MA')">
+                           Know More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 College Event Management System. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function setEventTitle(title) {
+            localStorage.setItem('eventTitle', title);
+        }
+
+        function setEventDetails(title, date, price, location) {
+            localStorage.setItem('eventTitle', title);
+            localStorage.setItem('eventDate', date);
+            localStorage.setItem('eventPrice', price);
+            localStorage.setItem('eventLocation', location);
+        }
+    </script>
+</body>
+</html>

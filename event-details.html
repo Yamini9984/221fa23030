@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="./assets/css/event-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Event Management</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="reg.html">Register</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event-details">
+            <h2 id="event-title">Event Details</h2>
+            <div class="event-details-grid">
+                <div class="event-detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="event-detail-content">
+                        <h3>When</h3>
+                        <p id="event-date">September 22, 2024 | 11am-5pm</p>
+                    </div>
+                </div>
+                <div class="event-detail-item">
+                    <i class="fas fa-ticket-alt"></i>
+                    <div class="event-detail-content">
+                        <h3>Entry</h3>
+                        <p id="event-entry">Free with College ID</p>
+                    </div>
+                </div>
+                <div class="event-detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="event-detail-content">
+                        <h3>Where</h3>
+                        <p id="event-location">Citizens House of Blues Boston, 15 Lansdowne St, Boston, MA 02215</p>
+                    </div>
+                </div>
+                <div class="event-detail-item">
+                    <i class="fas fa-map-signs"></i>
+                    <div class="event-detail-content">
+                        <h3>Directions</h3>
+                        <p>Directions coming soon. Using the T: Coming Soon</p>
+                    </div>
+                </div>
+                <div class="event-detail-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="event-detail-content">
+                        <h3>What to Bring</h3>
+                        <p>Your college ID, energy to carry FREE stuff & your phone to capture and share your day.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Now Button -->
+            <div class="book-now-button-container">
+                <button id="book-button" class="book-button">Book Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 College Event Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Function to populate event details from localStorage
+        window.onload = function () {
+            const title = localStorage.getItem('eventTitle');
+            const date = localStorage.getItem('eventDate');
+            const entry = localStorage.getItem('eventEntry');
+            const location = localStorage.getItem('eventLocation');
+
+            // Update HTML elements with event details
+            document.getElementById('event-title').textContent = title || 'Event Details';
+            document.getElementById('event-date').textContent = date || 'Date not available';
+            document.getElementById('event-entry').textContent = entry || 'Entry details not available';
+            document.getElementById('event-location').textContent = location || 'Location not available';
+        };
+
+        // "Book Now" button redirect
+        document.getElementById('book-button').onclick = function () {
+            window.location.href = 'book-ticket.html';
+        };
+    </script>
+</body>
+</html>

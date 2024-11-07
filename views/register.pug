@@ -1,0 +1,67 @@
+//- extends layout
+
+//- block styles
+//-   link(rel="stylesheet", href="/assets/css/register.css")
+
+//- block content
+//-   main
+//-     .container
+//-       .signup-section
+//-         h2 Sign Up
+//-         form
+//-           .input-group
+//-             label(for="email") Email
+//-             input(type="email", id="email", placeholder="example@gmail.com")
+//-           .input-group
+//-             label(for="username") Username
+//-             input(type="text", id="username", placeholder="example@gmail.com")
+//-           .input-group
+//-             label(for="password") Password
+//-             input(type="password", id="password", placeholder="••••••••")
+//-           .input-group
+//-             label(for="confirm-password") Confirm Password
+//-             input(type="password", id="confirm-password", placeholder="••••••••")
+//-           button(type="submit", class="signup-btn") Create Account
+//-           .alternate-options
+//-             button(type="button", class="signup-alt-btn") Sign Up
+//-             button(type="button", class="signin-alt-btn") Sign In
+
+//-       .welcome-section
+//-         h1 Welcome to
+//-         h2 GatherX
+//-         .illustration
+//-           img(src="./assets/img/signup.jpg", alt="Illustration")
+
+
+extends layout
+
+block styles
+  link(rel="stylesheet", href="/assets/css/register.css") 
+block content
+  main
+    .container
+      .signup-section
+        h2 Sign Up
+        form(action="/register", method="POST")
+          .input-group
+            label(for="email") Email
+            input(type="email", name="email", id="email", placeholder="example@gmail.com", required)
+          .input-group
+            label(for="username") Username
+            input(type="text", name="username", id="username", placeholder="Username", required)
+          .input-group
+            label(for="password") Password
+            input(type="password", name="password", id="password", placeholder="••••••••", required)
+          .input-group
+            label(for="confirm-password") Confirm Password
+            input(type="password", name="confirm-password", id="confirm-password", placeholder="••••••••", required)
+          button(type="submit", class="signup-btn") Create Account
+          .alternate-options
+            button(type="button", class="signup-alt-btn") Sign Up with Google
+            button(type="button", class="signin-alt-btn") Sign In
+
+      .welcome-section
+        h1 Welcome to
+        h2 GatherX
+        .illustration
+          img(src="/assets/img/signup.jpg", alt="Illustration")

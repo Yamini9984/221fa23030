@@ -1,0 +1,284 @@
+//- doctype html
+//- html(lang="en")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(name="viewport" content="width=device-width, initial-scale=1.0")
+//-         title Post New Event - University Event Management
+//-         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+//-         style.
+//-             body {
+//-                 font-family: 'Arial', sans-serif;
+//-                 background-color: #f9f9f9;
+//-                 color: #333;
+//-                 margin: 0;
+//-                 padding: 0;
+//-             }
+//-             header {
+//-                 background: #3b5998;
+//-                 color: white;
+//-                 padding: 1rem 0;
+//-                 text-align: center;
+//-             }
+//-             header h1 {
+//-                 margin: 0;
+//-                 font-size: 2.5rem;
+//-             }
+//-             main {
+//-                 max-width: 100%;
+//-                 margin: 2rem auto;
+//-                 padding: 2rem;
+//-                 background: white;
+//-                 border-radius: 8px;
+//-                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+//-             }
+//-             h2 {
+//-                 text-align: center;
+//-                 color: #3b5998;
+//-                 margin-bottom: 1.5rem;
+//-             }
+//-             form {
+//-                 display: flex;
+//-                 flex-wrap: wrap;
+//-                 gap: 1.5rem;
+//-             }
+//-             .form-group {
+//-                 flex: 1 1 calc(50% - 1rem);
+//-                 min-width: 250px;
+//-                 margin-bottom: 1.5rem;
+//-             }
+//-             label {
+//-                 margin-bottom: 0.5rem;
+//-                 font-weight: bold;
+//-                 display: block;
+//-             }
+//-             input[type="text"],
+//-             input[type="file"],
+//-             input[type="datetime-local"],
+//-             input[type="number"],
+//-             textarea {
+//-                 padding: 0.8rem;
+//-                 margin-bottom: 1rem;
+//-                 border: 1px solid #ddd;
+//-                 border-radius: 4px;
+//-                 font-size: 1rem;
+//-                 width: 100%;
+//-                 box-sizing: border-box;
+//-             }
+//-             textarea {
+//-                 resize: none;
+//-                 height: 80px;
+//-             }
+//-             button {
+//-                 padding: 0.8rem;
+//-                 background: #3b5998;
+//-                 color: white;
+//-                 border: none;
+//-                 border-radius: 4px;
+//-                 font-size: 1.2rem;
+//-                 cursor: pointer;
+//-                 width: 100%;
+//-             }
+//-             button:hover {
+//-                 background: #2e478b;
+//-             }
+//-             .footer {
+//-                 text-align: center;
+//-                 margin-top: 2rem;
+//-                 color: #777;
+//-             }
+//-     body
+//-         header
+//-             h1 GatherX
+//-              nav
+//-                  ul
+//-                     li: a(href="/page") Dashboard
+//-         main
+//-             h2 Post New Event
+//-             form#event-form(action="/submit-event" method="POST" enctype="multipart/form-data")
+//-                 .form-group
+//-                     label(for="event-image") Event Image:
+//-                     input(type="file" id="event-image" name="eventImage" accept="image/*" required)
+                
+//-                 .form-group
+//-                     label(for="event-title") Title of the Event:
+//-                     input(type="text" id="event-title" name="eventTitle" placeholder="Enter the event title" required)
+                
+//-                 .form-group
+//-                     label(for="event-description") Description:
+//-                     textarea(id="event-description" name="eventDescription" placeholder="Enter a brief description of the event" required)
+                
+//-                 .form-group
+//-                     label(for="event-date-time") Date and Time:
+//-                     input(type="datetime-local" id="event-date-time" name="eventDateTime" required)
+                
+//-                 .form-group
+//-                     label(for="entry-fee") Entry Fee:
+//-                     input(type="number" id="entry-fee" name="entryFee" placeholder="Enter entry fee" required)
+                
+//-                 .form-group
+//-                     label(for="event-location") Location:
+//-                     input(type="text" id="event-location" name="eventLocation" placeholder="Enter event location" required)
+                
+//-                 .form-group
+//-                     label(for="items-to-carry") What to Carry:
+//-                     textarea(id="items-to-carry" name="itemsToCarry" placeholder="Enter items to carry to the event" required)
+                
+//-                 .form-group(style="flex-basis: 100%; margin-top: 1rem;")
+//-                     button(type="submit") Submit Event
+//-         footer.footer
+//-             p &copy; 2024 University Event Management. All rights reserved.
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Post New Event - University Event Management
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+        style.
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background: #3b5998;
+                color: white;
+                padding: 1rem 0;
+                text-align: center;
+            }
+            header h1 {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 1rem;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+            }
+            nav ul li a:hover {
+                background-color: #2e478b;
+            }
+            main {
+                max-width: 100%;
+                margin: 2rem auto;
+                padding: 2rem;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                text-align: center;
+                color: #3b5998;
+                margin-bottom: 1.5rem;
+            }
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+            .form-group {
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 250px;
+                margin-bottom: 1.5rem;
+            }
+            label {
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                display: block;
+            }
+            input[type="text"],
+            input[type="file"],
+            input[type="datetime-local"],
+            input[type="number"],
+            textarea {
+                padding: 0.8rem;
+                margin-bottom: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            textarea {
+                resize: none;
+                height: 80px;
+            }
+            button {
+                padding: 0.8rem;
+                background: #3b5998;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                width: 100%;
+            }
+            button:hover {
+                background: #2e478b;
+            }
+            .footer {
+                text-align: center;
+                margin-top: 2rem;
+                color: #777;
+            }
+    body
+        header
+            h1 GatherX
+            nav
+                ul
+                    li: a(href="/admin/page") Admin page
+        main
+            h2 Post New Event
+            form#event-form(action="/submit-event" method="POST" enctype="multipart/form-data")
+                .form-group
+                    label(for="event-image") Event Image:
+                    input(type="file" id="event-image" name="eventImage" accept="image/*" required)
+                
+                .form-group
+                    label(for="event-title") Title of the Event:
+                    input(type="text" id="event-title" name="eventTitle" placeholder="Enter the event title" required)
+                
+                .form-group
+                    label(for="event-description") Description:
+                    textarea(id="event-description" name="eventDescription" placeholder="Enter a brief description of the event" required)
+                
+                .form-group
+                    label(for="event-date-time") Date and Time:
+                    input(type="datetime-local" id="event-date-time" name="eventDateTime" required)
+                
+                .form-group
+                    label(for="entry-fee") Entry Fee:
+                    input(type="number" id="entry-fee" name="entryFee" placeholder="Enter entry fee" required)
+                
+                .form-group
+                    label(for="event-location") Location:
+                    input(type="text" id="event-location" name="eventLocation" placeholder="Enter event location" required)
+                
+                .form-group
+                    label(for="items-to-carry") What to Carry:
+                    textarea(id="items-to-carry" name="itemsToCarry" placeholder="Enter items to carry to the event" required)
+                
+                .form-group(style="flex-basis: 100%; margin-top: 1rem;")
+                    button(type="submit") Submit Event
+        footer.footer
+            p &copy; 2024 University Event Management. All rights reserved.
+

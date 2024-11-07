@@ -1,0 +1,61 @@
+extends layout
+
+block styles
+  link(rel="stylesheet", href="/assets/css/about.css")
+
+block content
+  main
+    .section.section-1
+      img(src="./assets/img/uni.png", alt="University Events")
+      .section-content
+        h2 About Us
+        p Welcome to University Event Management, your dedicated platform for discovering and participating in a variety of events at our university. Whether you're interested in cultural festivals, academic seminars, sports competitions, or social gatherings, we aim to make your university experience vibrant and engaging.
+
+    .section.section-2
+      img(src="./assets/img/we.png", alt="Our Team")
+      .section-content
+        h3 Who We Are
+        p University Event Management is a team of enthusiastic event organizers and student volunteers committed to fostering a lively campus environment. We are passionate about connecting students through memorable experiences, ensuring that every event is not only enjoyable but also enriching.
+
+    .section.section-3
+      img(src="./assets/img/mission.png", alt="Our Mission")
+      .section-content
+        h3 Our Mission
+        p Our mission is straightforward: to keep students informed and engaged with campus events. We provide comprehensive event details, registration support, and insights into the many opportunities available to you. Our goal is to be your go-to resource for everything related to university events, ensuring you never miss out on the excitement.
+
+    .section.section-4
+      .section-content
+        h3 Why Choose Us
+        ul
+          li
+            strong Timely Updates: We provide real-time information on upcoming events, ensuring you're always in the loop.
+          li
+            strong Personalized Experience: Our platform allows you to customize your event preferences, helping you find activities that suit your interests.
+          li
+            strong Community Engagement: We strive to create an inclusive environment where all students can connect and participate in campus life.
+          li
+            strong Easy Registration: Our user-friendly system makes it simple to sign up for events and get involved.
+      img(src="./assets/img/why.png", alt="Community Engagement")
+
+    .section.section-5
+      img(src="./assets/img/contact.png", alt="Contact Us")
+      .section-content
+        h3 Contact Us
+        p If you have any questions or need assistance, please reach out to us at:
+        p Email: support@universityeventmanagement.com
+        p Phone: +91-1234-567890
+
+    .section.section-6
+      .section-content
+        h2 Meet the Creators
+      .creator-cards
+        .card
+          img(src="./assets/img/ved.jpg", alt="Creator 1 Photo", class="creator-photo")
+          .card-content
+            h3 Sai Vedagna
+            p I'm a passionate developer with a background in web development. I am responsible for the frontend design and user experience.
+        .card
+          img(src="./assets/img/roh.jpg", alt="Creator 2 Photo", class="creator-photo")
+          .card-content
+            h3 Rohith
+            p I'm a skilled developer specializing in backend development and database management, ensuring that all data is stored securely.

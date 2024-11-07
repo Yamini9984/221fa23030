@@ -1,0 +1,116 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title GatherX - Events
+    link(rel="stylesheet", href="./assets/css/index.css")
+
+  body
+    main
+      //- Hero Section
+      section.hero-section
+        h1.hero-title Welcome to GatherX
+        img.hero-image(src="./assets/img/hero.png", alt="Hero Image")
+
+      //- Authentication Section
+      section.auth-section
+        .auth-card
+          h2 Sign In
+          p Already have an account? Sign in to access your events and manage your bookings.
+          a.auth-button(href="/login") Sign In
+        
+        .auth-card
+          h2 Sign Up
+          p New to GatherX? Sign up and start exploring events around you.
+          a.auth-button(href="/register") Sign Up
+
+      //- Events Section
+      section.events-section
+        h2.events-title Upcoming Events
+        .event-cards
+          //- Event Card 1
+          .event-card
+            img.event-image(src="./assets/img/music.png", alt="Event 1")
+            .event-content
+              h3.event-title Music Concert
+              p.event-description Join us for an unforgettable night of live music, featuring top artists and bands.
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Music Concert', './assets/img/music.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Music Concert', 'September 22, 2024 | 11am-5pm', 'Free with College ID', 'Citizens House of Blues Boston, 15 Lansdowne St, Boston, MA 02215')") Know More
+
+          //- Event Card 2
+          .event-card
+            img.event-image(src="./assets/img/art.png", alt="Event 2")
+            .event-content
+              h3.event-title Art Exhibition
+              p.event-description Explore stunning artworks from talented artists across the globe.
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Art Exhibition', './assets/img/art.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Art Exhibition', 'October 5, 2024 | 10am-4pm', 'Free with College ID', 'City Art Gallery, Boston, MA')") Know More
+
+          //- Event Card 3
+          .event-card
+            img.event-image(src="./assets/img/tech.png", alt="Event 3")
+            .event-content
+              h3.event-title Tech Conference
+              p.event-description Discover the latest in technology and innovation at our annual tech conference.
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Tech Conference', './assets/img/tech.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Tech Conference', 'November 12, 2024 | 9am-6pm', 'Free with College ID', 'Tech Park, Boston, MA')") Know More
+
+          //- Event Card 4
+          .event-card
+            img.event-image(src="./assets/img/film.png", alt="Event 4")
+            .event-content
+              h3.event-title Film Screenings
+              p.event-description Experience an inspiring evening of independent films followed by discussions with filmmakers.
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Film Screenings', './assets/img/film.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Film Screenings', 'December 18, 2024 | 6pm-10pm', 'Free with College ID', 'Indie Cinema House, Boston, MA')") Know More
+
+          //- Event Card 5
+          .event-card
+            img.event-image(src="./assets/img/esport.png", alt="Event 5")
+            .event-content
+              h3.event-title E-Sports Tournaments
+              p.event-description Join us for thrilling e-sports tournaments where gamers compete for glory and prizes!
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('E-Sports Tournaments', './assets/img/esport.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('E-Sports Tournaments', 'January 20, 2025 | 10am-8pm', 'Free Entry', 'Esports Arena, Boston, MA')") Know More
+
+          //- Event Card 6
+          .event-card
+            img.event-image(src="./assets/img/mock.png", alt="Event 6")
+            .event-content
+              h3.event-title Mock Interviews
+              p.event-description Enhance your job prospects with practice interviews and feedback from industry professionals.
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Mock Interviews', './assets/img/mock.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Mock Interviews', 'February 3, 2025 | 9am-3pm', 'Registration Required', 'Career Center, Boston, MA')") Know More
+
+          //- Event Card 7
+          .event-card
+            img.event-image(src="./assets/img/end.png", alt="Event 7")
+            .event-content
+              h3.event-title End-of-Semester Parties
+              p.event-description Celebrate the end of the semester with a night of music, dancing, and fun!
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('End-of-Semester Parties', './assets/img/end.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('End-of-Semester Parties', 'April 30, 2025 | 7pm-11pm', 'Free Entry', 'Student Union Hall, Boston, MA')") Know More
+
+          //- Event Card 8
+          .event-card
+            img.event-image(src="./assets/img/out.png", alt="Event 8")
+            .event-content
+              h3.event-title Outdoor Adventure Trips
+              p.event-description Join us for exciting outdoor adventures filled with thrilling activities and breathtaking scenery!
+              a.event-button(href="/book-ticket", onclick="setEventTitleAndImage('Outdoor Adventure Trips', './assets/img/out.png')") Book Now
+              a.book-button(href="/event-details", onclick="setEventDetails('Outdoor Adventure Trips', 'May 15, 2025 | 7am-5pm', 'Limited Slots Available', 'Adventure Park, Boston, MA')") Know More
+
+      //- Include the script for setting event details
+      script.
+        function setEventTitleAndImage(title, imageUrl) {
+            localStorage.setItem('eventTitle', title);
+            localStorage.setItem('eventImage', imageUrl);
+        }
+
+        function setEventDetails(title, date, price, location) {
+            localStorage.setItem('eventTitle', title);
+            localStorage.setItem('eventDate', date);
+            localStorage.setItem('eventPrice', price);
+            localStorage.setItem('eventLocation', location);
+        }

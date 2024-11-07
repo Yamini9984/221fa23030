@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header, footer {
+    width: 100%; /* Full-width */
+    background-color: #08C2FF;
+    color: white;
+}
+
+header {
+    position: fixed; /* Fixes header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #08C2FF;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
+    z-index: 1000; /* Ensures header is on top */
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1; /* Allows main content to expand and push the footer down */
+    padding: 80px 20px 20px; /* Add padding-top to create space for header */
+    background-color: #f4f4f4;
+    min-height: calc(100vh - 60px - 40px); /* Adjust for header and footer height */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+
+
+
+
+
+main {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #efefef;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+    width: 80%; /* Default width for sections */
+    margin-left: auto; /* Center align for odd sections */
+    margin-right: auto; /* Center align for even sections */
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse; /* Push to the right */
+    margin-left: 0; /* Align right */
+    margin-right: auto; /* Ensure margin on left */
+}
+
+.section:nth-child(odd) {
+    margin-left: auto; /* Align left */
+    margin-right: 0; /* Ensure margin on right */
+}
+
+/* Different widths for different sections */
+.section-1,
+.section-2 {
+    width: 80%; /* 80% width for the first two sections */
+}
+
+.section-3,
+.section-4 {
+    width: 70%; /* 70% width for the next two sections */
+}
+
+.section-5,
+.section-6 {
+    width: 90%; /* 90% width for the last two sections */
+}
+
+.section img {
+    width: 50%;
+    border-radius: 8px;
+    margin: 0 20px;
+}
+
+.section-content {
+    flex: 1;
+    padding: 0 20px;
+    font-size: 1.1rem; /* Increased font size */
+}
+
+h2, h3 {
+    color: #3b5998;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #3b5998;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+
+
+/* Creator Cards */
+.creator-cards {
+    display: flex;
+    justify-content: center; /* Center align cards */
+    flex-wrap: wrap; /* Allow cards to wrap to next line */
+    margin-top: 2rem; /* Add some spacing above the cards */
+}
+
+.card {
+    background: #efefef; /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Margin around each card */
+    padding: 1rem;
+    text-align: center; /* Center align text in cards */
+    width: 280px; /* Fixed width for cards */
+}
+
+.creator-photo {
+    width: 100px; /* Fixed width for square shape */
+    height: 100px; /* Fixed height for square shape */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Optional: round corners slightly */
+    margin-bottom: 10px; /* Space below image */
+}
+
+.card-content {
+    padding: 0 10px; /* Horizontal padding for card content */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Specific animations for each section */
+.section-1 { animation-delay: 0s; }
+.section-2 { animation-delay: 0.2s; }
+.section-3 { animation-delay: 0.4s; }
+.section-4 { animation-delay: 0.6s; }
+.section-5 { animation-delay: 0.8s; }
+.section-6 { animation-delay: 1s; }
+
+

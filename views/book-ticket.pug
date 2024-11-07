@@ -1,0 +1,150 @@
+//- extends layout
+
+//- block styles
+//-   link(rel="stylesheet", href="/assets/css/book-ticket.css")
+
+//- block content
+//-   main
+//-     h2#event-title Book Ticket for Music Concert
+//-     form(action="confirmation.html", method="POST")
+//-       label(for="name") Name:
+//-       input(type="text", id="name", name="name", required)
+
+//-       label(for="email") Email:
+//-       input(type="email", id="email", name="email", required)
+
+//-       label(for="tickets") Number of Tickets:
+//-       input(type="number", id="tickets", name="tickets", min="1", required)
+
+//-       button(type="submit", class="auth-button") Confirm Booking
+
+
+//-   script.
+//-     // Retrieve event title from localStorage and display it in the h2 tag
+//-     document.addEventListener("DOMContentLoaded", () => {
+//-         const eventTitle = localStorage.getItem('eventTitle'); // Make sure the key matches what's set in index.html
+//-         if (eventTitle) {
+//-             document.getElementById("event-title").textContent = `Book Ticket for ${eventTitle}`;
+//-         }
+//-     });
+
+
+//- extends layout
+
+//- block styles 
+//-     link(rel="stylesheet", href="/assets/css/book-ticket.css")
+
+//- block content
+//-   //- Background Section
+//-   .background-section
+//-     h1.book-title Event Booking
+
+//-     //- Booking Form
+//-     .booking-form
+//-       form(action="/submit-booking", method="POST")
+//-         label(for="name") Name:
+//-         input(type="text", name="name" required)
+        
+//-         label(for="email") Email:
+//-         input(type="email", name="email" required)
+        
+//-         label(for="phone") Phone:
+//-         input(type="tel", name="phone" required)
+
+//-          button.auth-button(type="submit") Book Now
+
+//-   //- Include the script for setting the background image
+//-   script.
+//-     document.addEventListener('DOMContentLoaded', function() {
+//-         const eventImage = localStorage.getItem('eventImage');
+//-         if (eventImage) {
+//-             document.body.style.backgroundImage = `url(${eventImage})`;
+//-             document.body.style.backgroundSize = 'cover'; // Cover the entire background
+//-             document.body.style.backgroundPosition = 'center'; // Center the image
+//-             document.body.style.backgroundRepeat = 'no-repeat'; // Prevent repeating
+//-             document.body.style.height = '100vh'; // Full height of the viewport
+//-         }
+//-     });
+
+
+
+
+
+
+//- extends layout
+
+//- block styles
+//-   link(rel="stylesheet", href="/assets/css/book-ticket.css")
+
+//- block content
+//-   .background-section
+//-     h1.book-title Event Booking
+
+//-     .booking-form
+//-       form(action="/submit-booking", method="POST")
+//-         // Input Fields
+//-         label(for="name") Name:
+//-         input(type="text", id="name", name="name", required)
+
+//-         label(for="email") Email:
+//-         input(type="email", id="email", name="email", required)
+
+//-         label(for="phone") Phone:
+//-         input(type="tel", id="phone", name="phone", required)
+
+//-         // Button
+//-         button.auth-button(type="submit") Book Now
+
+//-   // Background Image Script
+//-   script.
+//-     document.addEventListener('DOMContentLoaded', function() {
+//-       const eventImage = localStorage.getItem('eventImage');
+//-       if (eventImage) {
+//-         document.body.style.backgroundImage = `url(${eventImage})`;
+//-         document.body.style.backgroundSize = 'cover';
+//-         document.body.style.backgroundPosition = 'center';
+//-         document.body.style.backgroundRepeat = 'no-repeat';
+//-         document.body.style.height = '100vh';
+//-       }
+//-     });
+
+
+
+extends layout
+
+block styles
+  link(rel="stylesheet", href="/assets/css/book-ticket.css")
+
+block content
+  .background-section
+    h1.book-title Event Booking
+
+    .booking-form
+      form(action="/submit-booking", method="POST")
+        .form-group
+          label(for="name") Name:
+          input(type="text", id="name", name="name", placeholder="Enter your name", required)
+
+        .form-group
+          label(for="email") Email:
+          input(type="email", id="email", name="email", placeholder="Enter your email", required)
+
+        .form-group
+          label(for="phone") Phone:
+          input(type="tel", id="phone", name="phone", placeholder="Enter your phone number", required)
+
+        // Button
+        button.auth-button(type="submit") Book Now
+
+  // Background Image Script
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const eventImage = localStorage.getItem('eventImage');
+      if (eventImage) {
+        document.body.style.backgroundImage = `url(${eventImage})`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.height = '100vh';
+      }
+    });
